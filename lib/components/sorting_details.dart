@@ -12,7 +12,7 @@ class _SortingDetailsState extends State<SortingDetails> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 15.0, right: 15.0),
+      padding: const EdgeInsets.only(left: 20.0, right: 20.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
@@ -28,16 +28,7 @@ class _SortingDetailsState extends State<SortingDetails> {
                     ),
                   ),
                   SizedBox(width: 10.0),
-                  Container(
-                      decoration: BoxDecoration(
-                        color: Color(0xFF499D95),
-                        borderRadius: BorderRadius.circular(15.0),
-                      ),
-                      height: 30.0,
-                      child: Padding(
-                          padding: const EdgeInsets.only(
-                              top: 8.0, bottom: 8.0, left: 10.0, right: 10.0),
-                          child: DropDown(dropdownValue)))
+                  DropDown(dropdownValue)
                 ],
               ),
             ],

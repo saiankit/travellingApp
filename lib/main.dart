@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:travellingApp/screens/home_screen.dart';
+import 'package:travellingApp/utilities/themeColors.dart';
 
 void main() => runApp(MyApp());
 
@@ -17,7 +18,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xFF138675),
+          backgroundColor: ThemeColors.green,
           elevation: 0,
           leading: IconButton(
             icon: Icon(Entypo.chevron_thin_left),

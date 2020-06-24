@@ -14,7 +14,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Stack(
       children: <Widget>[
         Container(
-          height: 450.0,
+          height: 500.0,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(45.0),
@@ -29,7 +29,39 @@ class _HomeScreenState extends State<HomeScreen> {
               FlyingDetails(),
               SizedBox(height: 20.0),
               SortingDetails(),
-              // Tabs(),
+              Padding(
+                padding: const EdgeInsets.only(
+                    top: 40.0, left: 20.0, right: 20.0, bottom: 30.0),
+                child: Container(
+                  height: 40.0,
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey[100]),
+                      borderRadius: BorderRadius.circular(15.0)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Text(
+                        'TRAIN',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      Text(
+                        'BUS',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      Text(
+                        'PLANE',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
               FlightTickets()
             ],
           ),

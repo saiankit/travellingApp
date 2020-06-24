@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:travellingApp/utilities/themeColors.dart';
+import 'package:travellingApp/utilities/themeStyles.dart';
 
 class TicketCard extends StatefulWidget {
   final int price;
@@ -9,6 +11,7 @@ class TicketCard extends StatefulWidget {
   final String departureTime;
   final int stops;
   final String totalTime;
+  final bool ticketType;
   TicketCard(
       {this.price,
       this.arrivalTime,
@@ -16,7 +19,8 @@ class TicketCard extends StatefulWidget {
       this.destinationCode,
       this.originCode,
       this.stops,
-      this.totalTime});
+      this.totalTime,
+      this.ticketType});
   @override
   _TicketCardState createState() => _TicketCardState();
 }
@@ -24,115 +28,108 @@ class TicketCard extends StatefulWidget {
 class _TicketCardState extends State<TicketCard> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(
-        left: 15.0,
-        right: 15.0,
-        top: 10.0,
-      ),
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(50.0),
-          color: Colors.white,
-        ),
-        child: Padding(
-          padding: const EdgeInsets.only(
-              top: 30.0, bottom: 30.0, left: 30.0, right: 30.0),
-          child: Column(
-            children: <Widget>[
-              Row(
+    return Stack(
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0),
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(50.0),
+              color: Colors.white,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.only(
+                  top: 30.0, bottom: 30.0, left: 35.0, right: 35.0),
+              child: Column(
                 children: <Widget>[
-                  Text(
-                    '${widget.price}',
-                    style: TextStyle(
-                        color: Color(0xFFff7259),
-                        fontSize: 35.0,
-                        fontWeight: FontWeight.w700),
+                  Row(
+                    children: <Widget>[
+                      Text('\$${widget.price}', style: ThemeStyles.ticketPrice)
+                    ],
+                  ),
+                  SizedBox(height: 15.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text('Fr 6 Mar.', style: ThemeStyles.greyStyle),
+                      Text('Fr 6 Mar.', style: ThemeStyles.greyStyle),
+                    ],
+                  ),
+                  SizedBox(height: 10.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text('${widget.originCode}',
+                          style: ThemeStyles.mainBlackStyle),
+                      Text('${widget.destinationCode}',
+                          style: ThemeStyles.mainBlackStyle)
+                    ],
+                  ),
+                  SizedBox(height: 8.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text('${widget.departureTime}',
+                          style: ThemeStyles.subBlackStyle),
+                      Text('${widget.arrivalTime}',
+                          style: ThemeStyles.subBlackStyle),
+                    ],
+                  ),
+                  SizedBox(height: 20.0),
+                  Container(
+                    child: Row(
+                      children: <Widget>[
+                        Icon(Icons.blur_on, color: Colors.grey),
+                        Icon(Entypo.aircraft_take_off, color: Colors.grey),
+                        Icon(Icons.blur_on, color: Colors.grey),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 20.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text('${widget.totalTime}', style: ThemeStyles.greyStyle),
+                    ],
                   )
                 ],
               ),
-              SizedBox(height: 15.0),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text(
-                    'Fr 6 Mar.',
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 15.0,
-                    ),
-                  ),
-                  Text(
-                    'Fr 6 Mar.',
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 15.0,
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text(
-                    '${widget.originCode}',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 30.0,
-                    ),
-                  ),
-                  Text(
-                    '${widget.destinationCode}',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 30.0,
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text(
-                    '${widget.departureTime}',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 15.0,
-                    ),
-                  ),
-                  Text(
-                    '${widget.arrivalTime}',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 15.0,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 20.0),
-              Container(
-                child: Row(
-                  children: <Widget>[
-                    Icon(Icons.blur_on, color: Colors.grey),
-                    Icon(Entypo.aircraft_take_off, color: Colors.grey),
-                    Icon(Icons.blur_on, color: Colors.grey),
-                  ],
-                ),
-              ),
-              SizedBox(height: 20.0),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    '${widget.totalTime}',
-                    style: TextStyle(color: Colors.grey),
-                  ),
-                ],
-              )
-            ],
+            ),
           ),
         ),
-      ),
+        Positioned(
+          left: 295.0,
+          child: Container(
+            decoration: BoxDecoration(
+              color: widget.ticketType ? ThemeColors.orange : ThemeColors.grey,
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(50.0),
+                  topRight: Radius.circular(50.0)),
+            ),
+            height: 70.0,
+            width: 100.0,
+            child: widget.ticketType
+                ? Center(
+                    child: Text(
+                      'Top',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        color: Colors.white,
+                      ),
+                    ),
+                  )
+                : Center(
+                    child: Text(
+                      'Med',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+          ),
+        ),
+      ],
     );
   }
 }

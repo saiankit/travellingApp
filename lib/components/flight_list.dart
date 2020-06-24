@@ -21,12 +21,26 @@ class _FlightTicketsState extends State<FlightTickets> {
             arrivalTime: '8:20 pm',
             stops: 1,
             totalTime: '13 h 25 min',
+            ticketType: true,
           ),
-          TicketCard(),
-          TicketCard(),
-          TicketCard(),
-          TicketCard(),
-          TicketCard(),
+          TicketCard(
+            price: 1120,
+            originCode: 'ODS',
+            destinationCode: 'CA (ONT)',
+            ticketType: false,
+          ),
+          TicketCard(
+            ticketType: true,
+          ),
+          TicketCard(
+            ticketType: false,
+          ),
+          TicketCard(
+            ticketType: true,
+          ),
+          TicketCard(
+            ticketType: true,
+          ),
         ],
       ),
     );
