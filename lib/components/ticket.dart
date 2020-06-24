@@ -9,7 +9,7 @@ class TicketCard extends StatefulWidget {
   final String originCode;
   final String arrivalTime;
   final String departureTime;
-  final int stops;
+  final bool stops;
   final String totalTime;
   final bool ticketType;
   TicketCard(
@@ -31,7 +31,7 @@ class _TicketCardState extends State<TicketCard> {
     return Stack(
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0),
+          padding: const EdgeInsets.only(left: 20.0, right: 20.0, bottom: 20.0),
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50.0),
@@ -80,7 +80,9 @@ class _TicketCardState extends State<TicketCard> {
                     child: Row(
                       children: <Widget>[
                         Icon(Icons.blur_on, color: Colors.grey),
+                        Text('- - - - - - - - - - - - - -'),
                         Icon(Entypo.aircraft_take_off, color: Colors.grey),
+                        Text('- - - - - - - - - - - - - -'),
                         Icon(Icons.blur_on, color: Colors.grey),
                       ],
                     ),
@@ -130,6 +132,38 @@ class _TicketCardState extends State<TicketCard> {
           ),
         ),
       ],
+    );
+  }
+}
+
+class MySeparator extends StatelessWidget {
+  final double height;
+  final Color color;
+
+  const MySeparator({this.height = 1, this.color = Colors.black});
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        final boxWidth = constraints.constrainWidth();
+        final dashWidth = 10.0;
+        final dashHeight = height;
+        final dashCount = (boxWidth / (2 * dashWidth)).floor();
+        return Flex(
+          children: List.generate(dashCount, (_) {
+            return SizedBox(
+              width: dashWidth,
+              height: dashHeight,
+              child: DecoratedBox(
+                decoration: BoxDecoration(color: color),
+              ),
+            );
+          }),
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          direction: Axis.horizontal,
+        );
+      },
     );
   }
 }
