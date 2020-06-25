@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:travellingApp/components/myTabs.dart';
 import 'package:travellingApp/models/category.dart';
 
-import '../app_state.dart';
+import '../services/app_state.dart';
 
 class MyTabs extends StatelessWidget {
   @override
@@ -18,13 +18,14 @@ class MyTabs extends StatelessWidget {
           builder: (context, appState, _) => SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Container(
-              height: 40.0,
+              height: 45.0,
               width: MediaQuery.of(context).size.width - 60,
-              
               decoration: BoxDecoration(
-                  // color: Colors.amber,
-                  borderRadius: BorderRadius.circular(15.0),
-                  border: Border.all(color: Colors.white)),
+                borderRadius: BorderRadius.circular(18.0),
+                border: Border.all(
+                  color: Colors.white.withOpacity(0.4),
+                ),
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[

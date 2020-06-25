@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travellingApp/utilities/themeStyles.dart';
 
 class FlyingDetails extends StatefulWidget {
   @override
@@ -15,33 +16,14 @@ class _FlyingDetailsState extends State<FlyingDetails> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Text(
-                'Odessa',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 40.0,
-                ),
-              ),
-              Text(
-                'Fr 6 Mar.',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 25.0,
-                    fontWeight: FontWeight.w100),
-              )
+              Text('Odessa', style: ThemeStyles.departureTextStyle),
+              Text('Fr 6 Mar.', style: ThemeStyles.travelDateTextStyle)
             ],
           ),
           SizedBox(height: 20.0),
           Row(
             children: <Widget>[
-              Text(
-                'Los Angeles',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 40.0,
-                  fontWeight: FontWeight.w700,
-                ),
-              )
+              Text('Los Angeles', style: ThemeStyles.arrivalTextStyle)
             ],
           ),
         ],

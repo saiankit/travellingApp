@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:travellingApp/utilities/themeColors.dart';
+import 'package:travellingApp/utilities/themeStyles.dart';
 import 'package:travellingApp/widgets/dropDown.dart';
 
 class SortingDetails extends StatefulWidget {
@@ -21,13 +22,7 @@ class _SortingDetailsState extends State<SortingDetails> {
             children: <Widget>[
               Row(
                 children: <Widget>[
-                  Text(
-                    'Sort by:',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15.0,
-                    ),
-                  ),
+                  Text('Sort by:', style: ThemeStyles.dropDownTextStyle),
                   SizedBox(width: 10.0),
                   DropDown(dropdownValue)
                 ],
@@ -45,7 +40,7 @@ class _SortingDetailsState extends State<SortingDetails> {
                         height: 40.0,
                         width: 40.0,
                         decoration: BoxDecoration(
-                          color: Color(0xFF499D95),
+                          color: ThemeColors.greenLight,
                           borderRadius: BorderRadius.circular(20.0),
                         ),
                         child: Icon(
@@ -56,12 +51,19 @@ class _SortingDetailsState extends State<SortingDetails> {
                       Positioned(
                         left: 20.0,
                         child: Container(
-                          height: 18.0,
-                          width: 18.0,
+                          height: 16.0,
+                          width: 16.0,
                           decoration: BoxDecoration(
                               color: ThemeColors.orange,
-                              borderRadius: BorderRadius.circular(9.0)),
-                          child: Center(child: Text('1')),
+                              borderRadius: BorderRadius.circular(8.0)),
+                          child: Center(
+                            child: Text(
+                              '1',
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
                         ),
                       )
                     ],
@@ -71,13 +73,10 @@ class _SortingDetailsState extends State<SortingDetails> {
                     height: 40.0,
                     width: 40.0,
                     decoration: BoxDecoration(
-                      color: Color(0xFF499D95),
+                      color: ThemeColors.greenLight,
                       borderRadius: BorderRadius.circular(20.0),
                     ),
-                    child: Icon(
-                      Octicons.settings,
-                      color: Colors.white,
-                    ),
+                    child: Icon(Octicons.settings, color: Colors.white),
                   )
                 ],
               ),

@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class Category {
   final int categoryId;
   final String name;
@@ -7,23 +5,23 @@ class Category {
   Category({this.categoryId, this.name});
 }
 
-final train = Category(
+final trainCategory = Category(
   categoryId: 0,
   name: "TRAIN",
 );
 
-final bus = Category(
+final busCategory = Category(
   categoryId: 1,
   name: "BUS",
 );
 
-final plane = Category(
+final planeCategory = Category(
   categoryId: 2,
   name: "PLANE",
 );
 
 final categories = [
-  train,
-  bus,
-  plane,
+  trainCategory,
+  busCategory,
+  planeCategory,
 ];

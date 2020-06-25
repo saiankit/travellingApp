@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Stack(
       children: <Widget>[
         Container(
-          height: 475.0,
+          height: 490.0,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(45.0),
@@ -28,10 +28,13 @@ class _HomeScreenState extends State<HomeScreen> {
         Container(
           child: Column(
             children: <Widget>[
+              SizedBox(height: 10.0),
               FlyingDetails(),
-              SizedBox(height: 30.0),
+              SizedBox(height: 20.0),
               SortingDetails(),
+              SizedBox(height: 15.0),
               MyTabs(),
+              SizedBox(height: 10.0),
               FlightTickets()
             ],
           ),

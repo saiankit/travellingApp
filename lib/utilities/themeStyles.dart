@@ -19,4 +19,22 @@ class ThemeStyles {
     color: Colors.black,
     fontSize: 15.0,
   );
+  static TextStyle dropDownTextStyle = TextStyle(
+    color: Colors.white,
+    fontSize: 15.0,
+  );
+  static TextStyle departureTextStyle = TextStyle(
+    color: Colors.white,
+    fontSize: 40.0,
+  );
+  static TextStyle travelDateTextStyle = TextStyle(
+    color: Colors.white,
+    fontSize: 25.0,
+    fontWeight: FontWeight.w100,
+  );
+  static TextStyle arrivalTextStyle = TextStyle(
+    color: Colors.white,
+    fontSize: 40.0,
+    fontWeight: FontWeight.w700,
+  );
 }

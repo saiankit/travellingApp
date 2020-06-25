@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:travellingApp/utilities/themeColors.dart';
 
-import '../app_state.dart';
+import '../services/app_state.dart';
 import '../models/category.dart';
 
 class CategoryWidget extends StatelessWidget {
@@ -26,16 +26,13 @@ class CategoryWidget extends StatelessWidget {
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
             color: isSelected ? Colors.white : Colors.transparent,
-            borderRadius: BorderRadius.circular(15.0)),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
-          child: Center(
-            child: Text(
-              category.name,
-              style: isSelected
-                  ? TextStyle(color: ThemeColors.green)
-                  : TextStyle(color: Colors.white),
-            ),
+            borderRadius: BorderRadius.circular(18.0)),
+        child: Center(
+          child: Text(
+            category.name,
+            style: isSelected
+                ? TextStyle(color: ThemeColors.green)
+                : TextStyle(color: Colors.white),
           ),
         ),
       ),
