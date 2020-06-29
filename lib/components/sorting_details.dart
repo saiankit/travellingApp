@@ -10,7 +10,6 @@ class SortingDetails extends StatefulWidget {
 }
 
 class _SortingDetailsState extends State<SortingDetails> {
-  String dropdownValue = 'Price';
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,9 +23,9 @@ class _SortingDetailsState extends State<SortingDetails> {
                 children: <Widget>[
                   Text('Sort by:', style: ThemeStyles.dropDownTextStyle),
                   SizedBox(width: 10.0),
-                  DropDown(dropdownValue)
+                  DropDown('Price')
                 ],
-              ),
+              )
             ],
           ),
           Column(
@@ -54,8 +53,9 @@ class _SortingDetailsState extends State<SortingDetails> {
                           height: 16.0,
                           width: 16.0,
                           decoration: BoxDecoration(
-                              color: ThemeColors.orange,
-                              borderRadius: BorderRadius.circular(8.0)),
+                            color: ThemeColors.orange,
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
                           child: Center(
                             child: Text(
                               '1',
@@ -73,15 +73,17 @@ class _SortingDetailsState extends State<SortingDetails> {
                     height: 40.0,
                     width: 40.0,
                     decoration: BoxDecoration(
-                      color: ThemeColors.greenLight,
-                      borderRadius: BorderRadius.circular(20.0),
+                        color: ThemeColors.greenLight,
+                        borderRadius: BorderRadius.circular(20.0)),
+                    child: Icon(
+                      Octicons.settings,
+                      color: Colors.white,
                     ),
-                    child: Icon(Octicons.settings, color: Colors.white),
                   )
                 ],
-              ),
+              )
             ],
-          ),
+          )
         ],
       ),
     );

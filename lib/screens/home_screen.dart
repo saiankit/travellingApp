@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travellingApp/components/flight_list.dart';
+import 'package:travellingApp/components/flightTickets.dart';
 import 'package:travellingApp/components/flying_details.dart';
 import 'package:travellingApp/components/sorting_details.dart';
 import 'package:travellingApp/components/tabs.dart';
@@ -18,12 +18,10 @@ class _HomeScreenState extends State<HomeScreen> {
         Container(
           height: 490.0,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(45.0),
-              bottomRight: Radius.circular(45.0),
-            ),
-            color: ThemeColors.green,
-          ),
+              color: ThemeColors.green,
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(45.0),
+                  bottomRight: Radius.circular(45.0))),
         ),
         Container(
           child: Column(

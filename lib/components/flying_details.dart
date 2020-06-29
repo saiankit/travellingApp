@@ -10,7 +10,7 @@ class _FlyingDetailsState extends State<FlyingDetails> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
+      padding: const EdgeInsets.only(top: 10.0, left: 20.0, right: 20.0),
       child: Column(
         children: <Widget>[
           Row(
@@ -25,7 +25,7 @@ class _FlyingDetailsState extends State<FlyingDetails> {
             children: <Widget>[
               Text('Los Angeles', style: ThemeStyles.arrivalTextStyle)
             ],
-          ),
+          )
         ],
       ),
     );

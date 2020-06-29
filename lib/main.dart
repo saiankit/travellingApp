@@ -14,8 +14,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(fontFamily: 'Helvetica'),
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: 'Helvetica'),
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: ThemeColors.green,

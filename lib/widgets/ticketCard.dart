@@ -70,9 +70,9 @@ class _TicketCardState extends State<TicketCard> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
                           Text('${widget.originCode}',
-                              style: ThemeStyles.mainBlackStyle),
+                              style: ThemeStyles.mainBlackTextStyle),
                           Text('${widget.destinationCode}',
-                              style: ThemeStyles.mainBlackStyle)
+                              style: ThemeStyles.mainBlackTextStyle)
                         ],
                       ),
                       SizedBox(height: 8.0),
@@ -80,9 +80,9 @@ class _TicketCardState extends State<TicketCard> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
                           Text('${widget.departureTime}',
-                              style: ThemeStyles.subBlackStyle),
+                              style: ThemeStyles.subBlackTextStyle),
                           Text('${widget.arrivalTime}',
-                              style: ThemeStyles.subBlackStyle),
+                              style: ThemeStyles.subBlackTextStyle),
                         ],
                       ),
                       SizedBox(height: 20.0),
@@ -113,9 +113,7 @@ class _TicketCardState extends State<TicketCard> {
                 alignment: Alignment.topRight,
                 child: Container(
                   decoration: BoxDecoration(
-                    color: widget.ticketType
-                        ? ThemeColors.orange
-                        : ThemeColors.grey,
+                    color: widget.ticketType ? ThemeColors.orange : Colors.grey,
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(50.0),
                         topRight: Radius.circular(50.0)),
